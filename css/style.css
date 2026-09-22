@@ -1,31 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap');
 
 /* ==========================================
    CSS VARIABLES & DESIGN SYSTEM (LIGHT)
    ========================================== */
 :root {
-  --font-title: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-title: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   
-  /* Color Palette (lp.fluentecomlegenda.com/lp6 style) */
-  --bg-primary: #ffffff;
-  --bg-secondary: #f9f9f6; /* warm off-white */
-  --bg-alt: #f5f5f5; /* light grey */
-  
-  --primary-color: #FF7A00; /* Orange Accent */
-  --primary-shadow: #C25A00; /* Darker Orange Shadow */
-  --primary-glow: rgba(255, 122, 0, 0.35);
-  
-  --text-dark: #1a1a1a; /* Strong Contrast Black */
-  --text-muted: #444444; /* Readable Dark Grey */
-  --text-light: #777777; /* Subtle light grey */
-  
-  --border-color: #e2e8f0;
-  --border-light: rgba(0, 0, 0, 0.08);
-  
-  --success-color: #16a34a; /* Classic green */
-  --success-bg: #e6ffe0;
-  
+  /* Color Palette — identidade MAPA HISPANO (terracota + tinta + areia) */
+  --bg-primary: #FFFCF7;   /* papel quente */
+  --bg-secondary: #F7EFE3; /* areia */
+  --bg-alt: #F2E8DA;       /* areia escura */
+
+  --primary-color: #E24E1B;  /* terracota */
+  --primary-shadow: #9C300B; /* terracota queimada */
+  --primary-glow: rgba(226, 78, 27, 0.30);
+  --on-primary: #FFFFFF;     /* texto sobre terracota */
+  --primary-strong: #C23F12; /* terracota escura: fundo de selos pequenos */
+
+  --ink-deep: #12211C;   /* verde-tinta das seções escuras */
+  --ink-panel: #1B2F28;  /* cards dentro das seções escuras */
+  --ink-border: #2C443A;
+
+  --text-dark: #1B1614;  /* tinta quente */
+  --text-muted: #4A403B;
+  --text-light: #857A72;
+
+  --border-color: #E6DACA;
+  --border-light: rgba(27, 22, 20, 0.09);
+
+  --success-color: #16704F; /* verde agave */
+  --success-bg: #E3F2EA;
+
   /* Shadows */
   --shadow-subtle: 0 2px 12px rgba(0, 0, 0, 0.05);
   --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.06);
@@ -106,7 +112,7 @@ img {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #c89a00;
+  color: var(--primary-shadow);
   margin-bottom: 12px;
   text-align: center;
   display: block;
@@ -128,15 +134,15 @@ img {
   color: var(--text-light);
 }
 
-/* Yellow Marker Highlight */
+/* Marca-texto terracota */
 .hl {
   background: var(--primary-color);
-  padding: 2px 6px;
-  border-radius: 6px;
+  padding: 2px 8px;
+  border-radius: 4px;
   display: inline;
   box-shadow: 0 3px 0 var(--primary-shadow);
-  color: var(--text-dark);
-  font-weight: 800;
+  color: var(--on-primary);
+  font-weight: 900;
 }
 
 /* ==========================================
@@ -145,7 +151,7 @@ img {
 .btn-cta {
   display: inline-block;
   background: var(--primary-color);
-  color: var(--text-dark);
+  color: var(--on-primary);
   font-size: 21px;
   font-weight: 900;
   padding: 20px 54px;
@@ -162,7 +168,7 @@ img {
 
 .btn-cta:hover {
   transform: translateY(-3px);
-  box-shadow: 0 7px 0 var(--primary-shadow), 0 10px 32px rgba(255, 122, 0, 0.5);
+  box-shadow: 0 7px 0 var(--primary-shadow), 0 10px 32px rgba(226, 78, 27, 0.5);
 }
 
 .btn-cta:active {
@@ -192,7 +198,7 @@ img {
    HERO SECTION
    ========================================== */
 .hero {
-  background: linear-gradient(180deg, #FFFAF4 0%, #ffffff 60%);
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 70%);
   padding: 40px 0 60px 0;
   text-align: center;
 }
@@ -332,8 +338,8 @@ img {
 }
 
 .hero-price-badge {
-  background: var(--primary-color);
-  color: var(--text-dark);
+  background: var(--primary-strong);
+  color: var(--on-primary);
   font-weight: 700;
   font-size: 11px;
   padding: 4px 12px;
@@ -542,7 +548,7 @@ img {
 
 .comparison-box.visual {
   border-top: 3px solid var(--primary-color);
-  box-shadow: 0 4px 24px rgba(255, 122, 0, 0.1);
+  box-shadow: 0 4px 24px rgba(226, 78, 27, 0.1);
 }
 
 .comparison-box h3 {
@@ -629,13 +635,13 @@ img {
 .kit-item-icon {
   width: 32px;
   height: 32px;
-  background: #FFF3E6;
-  border: 1px solid rgba(255, 122, 0, 0.3);
+  background: #FAEBDF;
+  border: 1px solid rgba(226, 78, 27, 0.3);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #C25A00;
+  color: #9C300B;
   font-size: 14px;
   font-weight: 700;
   flex-shrink: 0;
@@ -719,8 +725,8 @@ img {
 
 .bonus-badge {
   display: inline-block;
-  background: var(--primary-color);
-  color: var(--text-dark);
+  background: var(--primary-strong);
+  color: var(--on-primary);
   font-size: 11px;
   font-weight: 800;
   padding: 3px 10px;
@@ -854,8 +860,8 @@ img {
 }
 
 .countdown-bar .timer {
-  background: var(--primary-color);
-  color: #1a1a1a;
+  background: var(--primary-strong);
+  color: var(--on-primary);
   font-weight: 900;
   font-size: 14px;
   padding: 2px 8px;
@@ -983,13 +989,13 @@ img {
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
-  border: 1px solid rgba(255, 122, 0, 0.4);
-  background: #FFF3E6;
+  border: 1px solid rgba(226, 78, 27, 0.4);
+  background: #FAEBDF;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  color: #C25A00;
+  color: #9C300B;
   font-size: 13px;
 }
 
@@ -1245,7 +1251,7 @@ img {
 }
 
 .checkout-tab-btn.active {
-  background: #FFF3E6;
+  background: #FAEBDF;
   border-color: var(--primary-color);
   color: var(--text-dark);
 }
@@ -1324,10 +1330,10 @@ img {
 }
 
 .btn-copy {
-  background: var(--primary-color);
+  background: var(--primary-strong);
   border: none;
   border-radius: var(--radius-sm);
-  color: var(--text-dark);
+  color: var(--on-primary);
   padding: 0 16px;
   font-weight: 700;
   cursor: pointer;
@@ -1513,10 +1519,10 @@ img {
    DYNAMIC DARK SECTIONS (.section--dark)
    ========================================== */
 .section--dark {
-  background-color: #111111;
-  color: #a1a1aa;
-  border-top: 1px solid #222222;
-  border-bottom: 1px solid #222222;
+  background-color: var(--ink-deep);
+  color: #C6D4CD;
+  border-top: 1px solid var(--ink-border);
+  border-bottom: 1px solid var(--ink-border);
 }
 
 .section--dark .section-title {
@@ -1524,12 +1530,12 @@ img {
 }
 
 .section--dark .section-subtitle {
-  color: #71717a;
+  color: #9DB2A9;
 }
 
 .section--dark .preview-subtext-card {
-  background: #18181b;
-  border-color: #27272a;
+  background: var(--ink-panel);
+  border-color: var(--ink-border);
 }
 
 .section--dark .preview-subtext-card h3 {
@@ -1537,7 +1543,7 @@ img {
 }
 
 .section--dark .preview-subtext-card p {
-  color: #a1a1aa;
+  color: #C6D4CD;
 }
 
 .section--dark .preview-carousel {
@@ -1546,9 +1552,9 @@ img {
 }
 
 .section--dark .bonus-card {
-  background: #18181b;
-  border-color: #27272a;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+  background: var(--ink-panel);
+  border-color: var(--ink-border);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.28);
 }
 
 .section--dark .bonus-card:hover {
@@ -1595,7 +1601,7 @@ img {
   padding: 40px;
   max-width: 650px;
   margin: 0 auto;
-  box-shadow: 0 8px 40px rgba(255, 122, 0, 0.15);
+  box-shadow: 0 8px 40px rgba(226, 78, 27, 0.15);
   text-align: center;
 }
 
@@ -1613,8 +1619,8 @@ img {
 }
 
 .final-cta-price-box {
-  background: rgba(255, 122, 0, 0.06);
-  border: 1px solid rgba(255, 122, 0, 0.2);
+  background: rgba(226, 78, 27, 0.06);
+  border: 1px solid rgba(226, 78, 27, 0.2);
   border-radius: var(--radius-md);
   padding: 24px;
   margin-bottom: 24px;
@@ -1661,8 +1667,8 @@ img {
 .final-cta-bullets li .check {
   width: 20px;
   height: 20px;
-  background: var(--primary-color);
-  color: #1a1a1a;
+  background: var(--primary-strong);
+  color: var(--on-primary);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1724,9 +1730,9 @@ img {
 }
 
 .curriculum-tab-btn.active {
-  background: var(--primary-color);
-  border-color: var(--text-dark);
-  border-bottom: 3px solid var(--primary-shadow);
+  background: var(--ink-deep);
+  border-color: var(--ink-deep);
+  border-bottom: 3px solid var(--primary-color);
 }
 
 .tab-level {
@@ -1746,7 +1752,8 @@ img {
 }
 
 .curriculum-tab-btn.active .tab-level {
-  background: #ffffff;
+  background: var(--primary-color);
+  color: var(--on-primary);
 }
 
 .tab-info {
@@ -1769,8 +1776,12 @@ img {
   margin-top: 2px;
 }
 
+.curriculum-tab-btn.active .tab-title {
+  color: #ffffff;
+}
+
 .curriculum-tab-btn.active .tab-count {
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .curriculum-panes {
@@ -1873,8 +1884,8 @@ img {
   font-size: 0.8rem;
   font-weight: 700;
   color: var(--text-dark);
-  background: #FFF3E6;
-  border: 1px solid rgba(255, 122, 0, 0.5);
+  background: #FAEBDF;
+  border: 1px solid rgba(226, 78, 27, 0.5);
   padding: 4px 12px;
   border-radius: var(--radius-full);
 }
@@ -2060,7 +2071,7 @@ img {
 
 .audience-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(255, 122, 0, 0.5);
+  border-color: rgba(226, 78, 27, 0.5);
   box-shadow: var(--shadow-hover);
 }
 
@@ -2211,7 +2222,7 @@ img {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #C25A00;
+  color: #9C300B;
 }
 
 .value-stack-right-box .main-price {
@@ -2257,9 +2268,77 @@ img {
 /* ==========================================
    URGENCY PROMO BANNER & LIVE NOTIFICATIONS TOAST
    ========================================== */
-.promo-banner {
+.brand-bar {
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+  padding: 14px 0;
+}
+
+.brand-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
   background: var(--primary-color);
+  color: var(--on-primary);
+  font-family: var(--font-title);
+  font-weight: 900;
+  font-size: 15px;
+  letter-spacing: -0.5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 0 var(--primary-shadow);
+}
+
+.brand-name {
+  font-family: var(--font-title);
+  font-size: 1.15rem;
+  font-weight: 600;
   color: var(--text-dark);
+  letter-spacing: -0.01em;
+}
+
+.brand-name strong {
+  font-weight: 900;
+}
+
+.brand-tagline {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  color: var(--primary-shadow);
+  border-left: 1px solid var(--border-color);
+  padding-left: 14px;
+}
+
+@media(max-width: 560px) {
+  .brand-tagline {
+    border-left: none;
+    padding-left: 0;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 1.2px;
+  }
+}
+
+.promo-banner {
+  background: var(--ink-deep);
+  color: #F2E8DA;
   text-align: center;
   padding: 12px 20px;
   font-size: 13px;
@@ -2271,7 +2350,8 @@ img {
 }
 
 .promo-banner strong {
-  font-weight: 900;
+  font-weight: 700;
+  color: var(--primary-color);
 }
 
 .purchase-toast {
